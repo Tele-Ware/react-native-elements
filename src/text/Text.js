@@ -36,6 +36,7 @@ const TextElement = props => {
         h4 && StyleSheet.flatten([{ fontSize: normalize(22) }, h4Style]),
       ])}
       {...patchWebProps(rest)}
+      allowFontScaling={false}
     >
       {children}
     </Text>

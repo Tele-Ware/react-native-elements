@@ -91,7 +91,6 @@ class SearchBar extends React.Component {
       >
         <Input
           testID="searchInput"
-          renderErrorMessage={false}
           {...attributes}
           onFocus={this.onFocus}
           onBlur={this.onBlur}

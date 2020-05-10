@@ -6,7 +6,7 @@ exports[`SocialIcon component should apply values from theme 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "backgroundColor": "#4267B2",
+      "backgroundColor": "#3b5998",
       "borderRadius": 30,
       "flexDirection": "row",
       "height": 52,
@@ -62,7 +62,7 @@ exports[`SocialIcon component should apply values from theme 1`] = `
       },
     }
   }
-  underlayColor="#4267B2"
+  underlayColor="#3b5998"
   updateTheme={[Function]}
 >
   <View
@@ -74,128 +74,26 @@ exports[`SocialIcon component should apply values from theme 1`] = `
       }
     }
   >
-    <View
+    <Text
+      allowFontScaling={false}
       style={
-        Object {
-          "overflow": "hidden",
-        }
+        Array [
+          Object {
+            "color": "white",
+            "fontSize": 24,
+          },
+          Object {},
+          Object {
+            "fontFamily": "FontAwesome",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+          Object {},
+        ]
       }
     >
-      <View
-        replaceTheme={[Function]}
-        theme={
-          Object {
-            "SocialIcon": Object {
-              "type": "facebook",
-            },
-            "colors": Object {
-              "disabled": "hsl(208, 8%, 90%)",
-              "divider": "#bcbbc1",
-              "error": "#ff190c",
-              "grey0": "#393e42",
-              "grey1": "#43484d",
-              "grey2": "#5e6977",
-              "grey3": "#86939e",
-              "grey4": "#bdc6cf",
-              "grey5": "#e1e8ee",
-              "greyOutline": "#bbb",
-              "platform": Object {
-                "android": Object {
-                  "error": "#f44336",
-                  "primary": "#2196f3",
-                  "secondary": "#9C27B0",
-                  "success": "#4caf50",
-                  "warning": "#ffeb3b",
-                },
-                "ios": Object {
-                  "error": "#ff3b30",
-                  "primary": "#007aff",
-                  "secondary": "#5856d6",
-                  "success": "#4cd964",
-                  "warning": "#ffcc00",
-                },
-              },
-              "primary": "#2089dc",
-              "searchBg": "#303337",
-              "secondary": "#8F0CE8",
-              "success": "#52c41a",
-              "warning": "#faad14",
-            },
-          }
-        }
-        updateTheme={[Function]}
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
-              "justifyContent": "center",
-            }
-          }
-        >
-          <Text
-            allowFontScaling={false}
-            brand={false}
-            solid={false}
-            style={
-              Array [
-                Object {
-                  "color": "white",
-                  "fontSize": 24,
-                },
-                Object {
-                  "backgroundColor": "transparent",
-                },
-                Object {
-                  "fontFamily": "FontAwesome",
-                  "fontStyle": "normal",
-                  "fontWeight": "normal",
-                },
-                Object {},
-              ]
-            }
-            testID="iconIcon"
-          >
-            
-          </Text>
-        </View>
-      </View>
-    </View>
-  </View>
-</View>
-`;
-
-exports[`SocialIcon component should have width and height based on iconSize 1`] = `
-<View
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": undefined,
-      "borderRadius": 48,
-      "flexDirection": "row",
-      "height": 52,
-      "justifyContent": "center",
-      "margin": 7,
-      "width": 52,
-    }
-  }
->
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "flexDirection": "row",
-        "justifyContent": "center",
-      }
-    }
-  >
-    <Themed.Icon
-      color="white"
-      iconStyle={Object {}}
-      size={24}
-      type="font-awesome"
-    />
+      
+    </Text>
   </View>
 </View>
 `;
@@ -223,12 +121,12 @@ exports[`SocialIcon component should render light social icon 1`] = `
       }
     }
   >
-    <Themed.Icon
+    <Icon
+      allowFontScaling={false}
       color="#02b875"
-      iconStyle={Object {}}
       name="medium"
       size={24}
-      type="font-awesome"
+      style={Object {}}
     />
   </View>
 </View>
@@ -239,7 +137,7 @@ exports[`SocialIcon component should render social icon button 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "backgroundColor": "#4267B2",
+      "backgroundColor": "#3b5998",
       "borderRadius": 30,
       "flexDirection": "row",
       "justifyContent": "center",
@@ -255,7 +153,7 @@ exports[`SocialIcon component should render social icon button 1`] = `
       "shadowRadius": 1,
     }
   }
-  underlayColor="#4267B2"
+  underlayColor="#3b5998"
 >
   <View
     style={
@@ -266,12 +164,12 @@ exports[`SocialIcon component should render social icon button 1`] = `
       }
     }
   >
-    <Themed.Icon
+    <Icon
+      allowFontScaling={false}
       color="white"
-      iconStyle={Object {}}
       name="facebook"
       size={24}
-      type="font-awesome"
+      style={Object {}}
     />
     <Themed.Text
       style={
@@ -320,73 +218,13 @@ exports[`SocialIcon component should render without issues 1`] = `
       }
     }
   >
-    <Themed.Icon
+    <Icon
+      allowFontScaling={false}
       color="white"
-      iconStyle={Object {}}
       name="twitter"
       size={24}
-      type="font-awesome"
+      style={Object {}}
     />
-  </View>
-</View>
-`;
-
-exports[`SocialIcon component should use style and font from props 1`] = `
-<View
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "pink",
-      "borderRadius": 30,
-      "flexDirection": "row",
-      "justifyContent": "center",
-      "margin": 7,
-      "paddingBottom": 14,
-      "paddingTop": 14,
-      "shadowColor": "rgba(0,0,0, .4)",
-      "shadowOffset": Object {
-        "height": 1,
-        "width": 1,
-      },
-      "shadowOpacity": 1,
-      "shadowRadius": 1,
-    }
-  }
-  underlayColor="white"
->
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "flexDirection": "row",
-        "justifyContent": "center",
-      }
-    }
-  >
-    <Themed.Icon
-      color="#000000"
-      iconStyle={
-        Object {
-          "borderWidth": 1,
-        }
-      }
-      name="github"
-      size={24}
-      type="font-awesome"
-    />
-    <Themed.Text
-      style={
-        Object {
-          "color": "#000000",
-          "fontFamily": "arial",
-          "fontWeight": "bold",
-          "justifyContent": "center",
-          "marginLeft": 15,
-        }
-      }
-    >
-      title
-    </Themed.Text>
   </View>
 </View>
 `;

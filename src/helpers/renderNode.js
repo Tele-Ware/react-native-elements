@@ -12,12 +12,12 @@ const renderNode = (Component, content, defaultProps) => {
   }
   // Just in case
   if (content === true) {
-    return <Component {...defaultProps} />;
+    return <Component {...defaultProps} allowFontScaling={false} />;
   }
   if (typeof content === 'string' || typeof content === 'number') {
-    return <Component {...defaultProps}>{content}</Component>;
+    return <Component {...defaultProps} allowFontScaling={false}>{content}</Component>;
   }
-  return <Component {...defaultProps} {...content} />;
+  return <Component {...defaultProps} {...content} allowFontScaling={false} />;
 };
 
 export default renderNode;

@@ -17,13 +17,6 @@ class Image extends React.Component {
   };
 
   onLoad = () => {
-    const { transition, onLoad } = this.props;
-
-    if (!transition) {
-      this.state.placeholderOpacity.setValue(0);
-      return;
-    }
-
     const minimumWait = 100;
     const staggerNonce = 200 * Math.random();
 
@@ -37,8 +30,6 @@ class Image extends React.Component {
       },
       Platform.OS === 'android' ? 0 : Math.floor(minimumWait + staggerNonce)
     );
-
-    onLoad && onLoad();
   };
 
   render() {
@@ -52,7 +43,6 @@ class Image extends React.Component {
       ...attributes
     } = this.props;
     const hasImage = Boolean(attributes.source);
-    const { width, height, ...styleProps } = style;
 
     return (
       <View
@@ -63,14 +53,13 @@ class Image extends React.Component {
           testID="RNE__Image"
           {...attributes}
           onLoad={this.onLoad}
-          style={StyleSheet.flatten([
+          style={[
             StyleSheet.absoluteFill,
             {
-              width: width,
-              height: height,
+              width: style.width,
+              height: style.height,
             },
-            styleProps,
-          ])}
+          ]}
         />
 
         <Animated.View
@@ -106,7 +95,6 @@ const styles = {
   container: {
     backgroundColor: 'transparent',
     position: 'relative',
-    overflow: 'hidden',
   },
   placeholderContainer: {
     ...StyleSheet.absoluteFillObject,
@@ -124,13 +112,11 @@ Image.propTypes = {
   PlaceholderContent: nodeType,
   containerStyle: ViewPropTypes.style,
   placeholderStyle: ImageNative.propTypes.style,
-  transition: PropTypes.bool,
 };
 
 Image.defaultProps = {
   ImageComponent: ImageNative,
   style: {},
-  transition: true,
 };
 
 export { Image };

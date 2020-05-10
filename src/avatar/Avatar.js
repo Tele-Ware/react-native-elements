@@ -25,7 +25,7 @@ const avatarSizes = {
   xlarge: 150,
 };
 
-const defaultAccessory = {
+const defaultEditButton = {
   name: 'mode-edit',
   type: 'material',
   color: '#fff',
@@ -46,9 +46,9 @@ const Avatar = ({
   title,
   titleStyle,
   overlayContainerStyle,
-  showAccessory,
-  accessory: passedAccessory,
-  onAccessoryPress,
+  showEditButton,
+  editButton: passedEditButton,
+  onEditPress,
   imageProps,
   placeholderStyle,
   renderPlaceholderContent,
@@ -61,39 +61,28 @@ const Avatar = ({
   const titleSize = width / 2;
   const iconSize = width / 2;
 
-  const accessory = {
-    ...defaultAccessory,
-    ...passedAccessory,
+  const editButton = {
+    ...defaultEditButton,
+    ...passedEditButton,
   };
-  const accessorySize = accessory.size || (width + height) / 2 / 3;
+  const editButtonSize = editButton.size || (width + height) / 2 / 3;
 
-  const Utils = showAccessory && (
+  const Utils = showEditButton && (
     <TouchableHighlight
       style={StyleSheet.flatten([
-        styles.accessory,
+        styles.editButton,
         {
-          width: accessorySize,
-          height: accessorySize,
-          borderRadius: accessorySize / 2,
+          width: editButtonSize,
+          height: editButtonSize,
+          borderRadius: editButtonSize / 2,
         },
-        accessory.style,
+        editButton.style,
       ])}
-      underlayColor={accessory.underlayColor}
-      onPress={onAccessoryPress}
+      underlayColor={editButton.underlayColor}
+      onPress={onEditPress}
     >
       <View>
-        {'source' in accessory ? (
-          <Image
-            style={{
-              width: accessorySize,
-              height: accessorySize,
-              borderRadius: accessorySize / 2,
-            }}
-            {...accessory}
-          />
-        ) : (
-          <Icon size={accessorySize * 0.8} {...accessory} />
-        )}
+        <Icon size={editButtonSize * 0.8} {...editButton} />
       </View>
     </TouchableHighlight>
   );
@@ -145,8 +134,8 @@ const Avatar = ({
         PlaceholderContent={PlaceholderContent}
         containerStyle={StyleSheet.flatten([
           styles.overlayContainer,
-          rounded && { borderRadius: width / 2, overflow: 'hidden' },
           overlayContainerStyle,
+          rounded && { borderRadius: width / 2, overflow: 'hidden' },
         ])}
         source={source}
         {...imageProps}
@@ -173,13 +162,14 @@ const styles = StyleSheet.create({
   },
   overlayContainer: {
     flex: 1,
+    backgroundColor: '#bdbdbd',
   },
   title: {
     color: '#ffffff',
     backgroundColor: 'transparent',
     textAlign: 'center',
   },
-  accessory: {
+  editButton: {
     position: 'absolute',
     bottom: 0,
     right: 0,
@@ -224,9 +214,9 @@ Avatar.propTypes = {
     PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
     PropTypes.number,
   ]),
-  showAccessory: PropTypes.bool,
-  onAccessoryPress: PropTypes.func,
-  accessory: PropTypes.shape({
+  showEditButton: PropTypes.bool,
+  onEditPress: PropTypes.func,
+  editButton: PropTypes.shape({
     size: PropTypes.number,
     name: PropTypes.string,
     type: PropTypes.string,
@@ -241,10 +231,10 @@ Avatar.propTypes = {
 };
 
 Avatar.defaultProps = {
-  showAccessory: false,
-  onAccessoryPress: null,
+  showEditButton: false,
+  onEditPress: null,
   size: 'small',
-  accessory: defaultAccessory,
+  editButton: defaultEditButton,
   ImageComponent: RNImage,
 };
 

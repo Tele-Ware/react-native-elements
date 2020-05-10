@@ -172,7 +172,6 @@ const ListItem = props => {
 
         {input && (
           <Input
-            renderErrorMessage={false}
             {...input}
             inputStyle={StyleSheet.flatten([
               styles.input,
@@ -289,8 +288,10 @@ const styles = {
   },
   buttonGroupContainer: {
     flex: 1,
-    marginHorizontal: 0,
-    marginVertical: 0,
+    marginLeft: 0,
+    marginRight: 0,
+    marginTop: 0,
+    marginBottom: 0,
   },
   rightTitle: {
     color: ANDROID_SECONDARY,

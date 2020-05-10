@@ -115,7 +115,7 @@ const FeaturedTile = props => {
           </View>
           <Text
             testID="featuredTileTitle"
-            h4={!titleStyle || !titleStyle.fontSize}
+            h4
             style={StyleSheet.flatten([styles.text, titleStyle && titleStyle])}
           >
             {title}

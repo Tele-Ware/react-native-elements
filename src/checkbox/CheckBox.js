@@ -34,17 +34,10 @@ const CheckBox = props => {
     ...attributes
   } = rest;
 
-  const accessibilityStates = [
-    ...(checked ? ['checked'] : []),
-    ...(!checked ? ['unchecked'] : []),
-  ];
-
   return (
     <Component
-      accessibilityRole="checkbox"
-      accessibilityStates={accessibilityStates}
-      testID="checkbox"
       {...attributes}
+      testID="checkbox"
       onLongPress={onLongPress}
       onPress={onPress}
       style={StyleSheet.flatten([
@@ -63,21 +56,21 @@ const CheckBox = props => {
       >
         {!iconRight && <CheckBoxIcon {...props} checkedColor={checkedColor} />}
 
-        {React.isValidElement(title) ? (
-          title
-        ) : (
-          <TextElement
-            testID="checkboxTitle"
-            style={StyleSheet.flatten([
-              styles.text(theme),
-              textStyle && textStyle,
-              fontFamily && { fontFamily },
-            ])}
-            {...titleProps}
-          >
-            {checked ? checkedTitle || title : title}
-          </TextElement>
-        )}
+        {React.isValidElement(title)
+          ? title
+          : title && (
+              <TextElement
+                testID="checkboxTitle"
+                style={StyleSheet.flatten([
+                  styles.text(theme),
+                  textStyle && textStyle,
+                  fontFamily && { fontFamily },
+                ])}
+                {...titleProps}
+              >
+                {checked ? checkedTitle || title : title}
+              </TextElement>
+            )}
 
         {iconRight && <CheckBoxIcon {...props} checkedColor={checkedColor} />}
       </View>

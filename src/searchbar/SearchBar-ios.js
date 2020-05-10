@@ -130,7 +130,6 @@ class SearchBar extends Component {
       <View style={StyleSheet.flatten([styles.container, containerStyle])}>
         <Input
           testID="searchInput"
-          renderErrorMessage={false}
           {...attributes}
           onFocus={this.onFocus}
           onBlur={this.onBlur}

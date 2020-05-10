@@ -42,29 +42,10 @@ describe('Overlay', () => {
       .simulate('press');
   });
 
-  it('should click the backdrop and use passed handler', () => {
-    const onBackdropPress = jest.fn();
-
-    const wrapper = shallow(
-      <Overlay isVisible onBackdropPress={onBackdropPress}>
-        <Text>I'm in an Overlay</Text>
-      </Overlay>
-    );
-
-    wrapper
-      .dive()
-      .find({ testID: 'RNE__Overlay__backdrop' })
-      .simulate('press');
-
-    expect(onBackdropPress).toHaveBeenCalled();
-  });
-
   it('should apply values from theme', () => {
     const theme = {
       Overlay: {
-        backdropStyle: {
-          backgroundColor: 'green',
-        },
+        windowBackgroundColor: 'green',
       },
     };
 

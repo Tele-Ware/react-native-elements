@@ -67,6 +67,19 @@ describe('ButtonGroup Component', () => {
     expect(toJson(component)).toMatchSnapshot();
   });
 
+  it('should render lastButtonStyle', () => {
+    const component = shallow(
+      <ButtonGroup
+        theme={theme}
+        buttons={buttons}
+        lastBorderStyle={{ backgroundColor: 'red' }}
+      />
+    );
+
+    expect(component.length).toBe(1);
+    expect(toJson(component)).toMatchSnapshot();
+  });
+
   it('should render without inner borders', () => {
     const component = shallow(
       <ButtonGroup
@@ -216,22 +229,6 @@ describe('ButtonGroup Component', () => {
         .simulate('press');
       expect(onPress).toHaveBeenCalledWith([0]);
     });
-  });
-
-  it('vertical ButtonGroup', () => {
-    const component = shallow(
-      <ButtonGroup
-        theme={theme}
-        buttons={buttons}
-        containerStyle={{ backgroundColor: 'yellow' }}
-        buttonStyle={{ backgroundColor: 'blue' }}
-        textStyle={{ color: 'pink' }}
-        vertical
-      />
-    );
-
-    expect(component.length).toBe(1);
-    expect(toJson(component)).toMatchSnapshot();
   });
 
   it('should apply values from theme', () => {
